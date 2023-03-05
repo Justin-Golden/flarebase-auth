@@ -1,5 +1,5 @@
 {
-  "name": "@marplex/flarebase-auth",
+  "name": "@justin-golden/flarebase-auth",
   "version": "1.2.0",
   "description": "Firebase/Admin auth SDK for Cloudflare Workers",
   "main": "build/main/index.js",
@@ -7,7 +7,7 @@
   "module": "build/module/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Marplex/flarebase-auth"
+    "url": "https://github.com/Justin-Golden/flarebase-auth"
   },
   "license": "MIT",
   "keywords": ["firebase","firebase sdk", "cloudflare worker", "cloudflare", "firebase auth"],
