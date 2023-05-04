@@ -68,6 +68,36 @@ export class FlarebaseAuth {
     return fetch(URI, params);
   }
 
+  async getOobCode (email, userIp):Promise<JSON> {
+    const response = await this.sendFirebaseAuthPostRequest(
+      {
+        requestType: 'PASSWORD_RESET',
+        email: email,
+        userIp: userIp,
+        returnOobLink: 'true',
+      },
+      'sendOobCode'
+    );
+
+    if (response.status != 200) throw Error(await response.text());
+    return response.json();
+  }
+
+  async resetPassword (oobCode, newPassword, email):Promise<JSON>
+  {
+    const response = await this.sendFirebaseAuthPostRequest(
+      {
+        oobCode: oobCode,
+        newPassword: newPassword,
+        email: email,
+      },
+      'resetPassword'
+    );
+
+    if (response.status != 200) throw Error(await response.text());
+    return response.json();
+  }
+
   /**
    * Retrieve user info from a Firebase ID token
    * @param idToken A valid Firebase ID token
