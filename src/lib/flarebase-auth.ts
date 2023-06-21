@@ -50,7 +50,7 @@ export class FlarebaseAuth {
    * @param endpoint endpoint of the identity toolkit googleapis
    * @returns HTTP Response
    */
-  private sendFirebaseAuthPostRequest(
+  public sendFirebaseAuthPostRequest(
     formData: Record<string, string>,
     endpoint: string
   ): Promise<Response> {
